@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc -S $CFIL#!/bin/bash
+gcc -S $CFILEE
