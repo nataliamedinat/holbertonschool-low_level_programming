@@ -10,19 +10,19 @@ int main(void)
 	char n;
 	char u;
 
-	n: 'a';
-	u: 'A';
+n: 'a';
+u: 'A';
 
 	while (n <= 'z')
-	  {
-		  putchar (n);
-		  n++;
-	  }
+	{
+		putchar (n);
+		n++;
+	}
 	while (u <= 'z')
-	   {
-		    putchar (u);
-		    u++;
-	   }
-	   putchar ('\n');
+	{
+		putchar (u);
+		u++;
+	}
+	putchar ('\n');
 	return (0);
 }
