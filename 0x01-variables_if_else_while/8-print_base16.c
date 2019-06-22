@@ -15,7 +15,7 @@ while (var <= '9')
 putchar(var);
 var++;
 }
- 
+
 var = 'a';
 
 while (var <= 'f')
