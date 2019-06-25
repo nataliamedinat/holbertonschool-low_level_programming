@@ -5,10 +5,9 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-void print_alphabet(void);
+void print_alphabet(void)
 {
-char c;
+	char c;
 
 	c = 'a';
 
@@ -16,7 +15,6 @@ char c;
 	{
 		_putchar(c);
 		c++;
-	}									}
-		_putchar('\n');
-		return (0);
+	}
+	_putchar('\n');
 }
