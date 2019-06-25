@@ -4,18 +4,17 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char c;
+int c;
 
-	c = 'a';
+c = 0;
 
-	while (c <= 'z')
-	{
-		putchar(c);
-		c++;
-	}
-	putchar ('\n');
-	return (0);
+while (c < 10)
+{
+	printf("%d", c);
+	c++;
+}
+putchar('\n');
+return (0);
 }

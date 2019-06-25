@@ -1,21 +1,24 @@
+
 #include <stdio.h>
 /**
  * main - Entry point
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char c;
+int num;
 
-	c = 'a';
+num = 48;
 
-	while (c <= 'z')
-	{
-		putchar(c);
-		c++;
-	}
-	putchar ('\n');
-	return (0);
+while (num < 58)
+{
+putchar(num);
+num++;
 }
+putchar('\n');
+
+
+return (0);
+}
+
