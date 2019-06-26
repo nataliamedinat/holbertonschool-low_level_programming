@@ -1,8 +1,7 @@
 #include "holberton.h"
 /**
  * jack_bauer - Entry point
- *@h: value int
- *@m: value int
+ *
  * Return: Always 0 (Success)
  */
 void jack_bauer(void)
