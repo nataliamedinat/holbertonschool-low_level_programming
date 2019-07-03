@@ -1,4 +1,4 @@
-#include "holberton.h"
+:w#include "holberton.h"
 /**
  * puts2 - check the code for Holberton School students.
  *@str: pointer
