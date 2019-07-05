@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * string_toupper - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * string_toupper - lowercase to uppercase..
+ *@min: string
+ * Return: min
  */
-char *string_toupper(char *)
+char *string_toupper(char *min)
 {
 int pi; /**posicion inicial*/
 
