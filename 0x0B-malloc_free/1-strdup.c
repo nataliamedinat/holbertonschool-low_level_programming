@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _strdup - duplicate string
+ * _strdup - duplicate string to a newly space in memory
  *@str: value
- *@cpy: copy
- * Return: null.
+ * Return: null, the duplicate string
  */
 char *_strdup(char *str)
 {
