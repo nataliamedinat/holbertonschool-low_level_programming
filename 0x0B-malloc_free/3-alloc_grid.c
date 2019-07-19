@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 /**
  * alloc_grid - returns a pointer to a 2dimensional arrray of int
@@ -8,33 +7,35 @@
  */
 int **alloc_grid(int width, int height)
 {
-int **p;
-int j, i, k;
+int **p, i, j, see = 0;
 
 	if (width <= 0 || height <= 0)
 	{
-	return (NULL);
+		return (NULL);
 	}
 	p = malloc(sizeof(int *) * height);
 	if (p == NULL)
 		return (NULL);
-
 	for (i = 0; i < height; i++)
-
-		*(p + i) = malloc(sizeof(int) * width);
-		if(*(p + i)== NULL)
-	
 	{
-		for (j = i; j >= 0; j--)
+		*(p + i) = malloc(sizeof(int) * width);
+		if (*(p + i) == NULL)
 		{
-		free(*(p + j));
+			free(p);
+			while (see < i)
+			{
+				free(*(p + see));
+				see++;
+			}
+			return (NULL);
 		}
-		free(p);
 	}
-	for (k = 0; k < height; k++)
-	for (j = 0; j < width; j++)
-		p[i][j] = 0;
-
-		return (p);
-
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			p[i][j] = 0;
+		}
+	}
+	return (p);
 }
