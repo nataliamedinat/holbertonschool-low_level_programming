@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _strlen - Calcualte the lenght of an array
  * @s: The array to be calculated
