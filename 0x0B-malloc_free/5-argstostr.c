@@ -24,7 +24,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	
+
 	char *p;
 	int i, j, sum = 0, cont = 0;
 
