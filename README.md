@@ -1,0 +1,13 @@
+Low level programming & Algorithm. Holberton School.
+-Variables, else, while, if
+-Nested loops
+-Pointers, arrays and strings
+-Recursion
+-Static libraries
+-argc, argv
+-malloc, free
+-Structures, typedef
+-Preprocessor
+-Function pointers
+-Variadic pointers
+-Singly linked list
