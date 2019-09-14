@@ -22,7 +22,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		newnode->prev = NULL;
 		newnode->next = *head; /* For that the head doesn´t get lost*/
 
-	if ((*head != NULL))
+	if (*head != NULL)
 		(*head)->prev = newnode;
 
 		(*head) = newnode;
