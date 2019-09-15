@@ -1,4 +1,4 @@
-#include "lists.h"
+iinclude "lists.h"
 /**
  * get_dnodeint_at_index - returns the nth node of a list.
  *@head : pointer to the first element of the list
@@ -16,7 +16,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 			return (NULL);
 		}
 
-		coun++;
+		count++;
 		head = head->next;
 	}
 		return (head);
