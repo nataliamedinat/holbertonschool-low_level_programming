@@ -28,6 +28,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx == 0)
 	{
 		newnode = add_dnodeint (h, n);
+		return (newnode);
 	}
 
 	while (count < idx) /* Goes thru the list*/
