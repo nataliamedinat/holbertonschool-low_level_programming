@@ -21,7 +21,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* Create the array and reserve de space*/
 	if (new_table == NULL)
 	{
-		free(new_table);
 		return (NULL);
 	}
 	new_table->array = array;
