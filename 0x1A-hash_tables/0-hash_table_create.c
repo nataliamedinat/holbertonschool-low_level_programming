@@ -16,10 +16,13 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	new_table->size = size;
-	new_table->array = calloc(sizeof(hash_node_t), size);
+	new_table->array = calloc(size, sizeof(hash_node_t));
 	/* Create the array and reserve de space*/
 	if (new_table == NULL)
+	{
+		free(new_table);
 		return (NULL);
+	}
 
 	return (new_table);
 }
