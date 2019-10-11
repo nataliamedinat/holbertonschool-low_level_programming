@@ -7,7 +7,7 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *new_table; /* New table created*/
-	hash_table_t **array;
+	hash_node_t **array;
 
 	if (size == 0)
 		return (NULL);
