@@ -1,5 +1,32 @@
 #include "hash_tables.h"
 /**
+ * add_node - Adds a node
+ * @head: Array
+ * @str: String to pass
+ * @key: Key
+ * Return: Pointer to node
+ */
+hash_node_t *add_node(hash_node_t **head, const char *str, const char *key)
+{
+	hash_node_t *tmp;
+
+	if (head == NULL)
+	{
+		return (NULL);
+	}
+	tmp = *head;
+	tmp = malloc(sizeof(hash_node_t));
+	if (tmp == NULL)
+	{
+		return (NULL);
+	}
+	tmp->value = strdup(str);
+	tmp->key = strdup(key);
+	tmp->next = *head;
+	*head = tmp;
+	return (tmp);
+}
+/**
  * hash_table_set - Adds an element to the hash table
  *@ht: Hash table that i want to add or update the key/value
  *@key: Key,can not be an empty string
@@ -8,45 +35,35 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node;
-	unsigned int idx = key_index(key, size);
-	hash_node_t tmp = *ht->array[idx];
+	unsigned long int idx = key_index((const unsigned char *)key, ht->size);
+	hash_node_t *tmp = ht->array[idx];
+	int flag = 0;
 
-	if (ht == NULL) /* If hashtable is null*/
+	if (ht == NULL || key == NULL || value == NULL) /* If hashtable is null*/
 		return (0);
 
-	node = malloc(sizeof(hash_node_t)); /* Malloc for node*/
-	if (node == NULL) /* If malloc fails*/
-		return (0);
-
-	node->key = strdup(key);
-	node->value = strdup(value);
-
-	if (ht->array[idx] != NULL)
+	if (tmp == NULL)
 	{
-		tmp-> ht->array[idx];
-
-		while (tmp != NULL)  /* If its not null, means that has another value inside*/
+		if (add_node(&(ht->array[idx]), value, key) == NULL)
+			return (0);
+	}
+	else
+	{
+		while (tmp != NULL)
 		{
-			if (strcmp(tmp->key, tmp->key) == 0)
-		}		break;
+			if (strcmp(tmp->key, key) == 0)
+			{
+				tmp->value = strdup(value);
+				flag = 1;
+			}
 			tmp = tmp->next;
-
-		if (tmp == NULL) /* If tis null, insert the value*/
+		}
+		if (flag == 0)
 		{
-			node->next =ht->array[idx];
-			ht->array[idx] = node;
+			if (add_node(&(ht->array[idx]), value, key) == NULL)
+				return (0);
 		}
 
 	}
-		else
-		{
-			free(tmp->value);
-			tmp->value = strdup(node->value);
-			free(node->value);
-			free(node->key);
-			free(node);
-		}
-		node->next = NULL;
-		ht->array[idx] = node;
+	return (1);
 }
