@@ -10,36 +10,30 @@
 void selection_sort(int *array, size_t size)
 {
 
-	unsigned int i, j, k, flag, min, tmp, flag_chg = 0;
+	unsigned int i, j, min_index;
+	int min_num;
 
-	if (size < 2)
-	return;
+	if (!size)
+		return;
 
 	for (i = 0; i < size; i++)
 	{
-		min = i;
-		flag_chg = 0;
-		flag = 0;
-	for (j = i + 1; j < size; j++)
-	{
-		if (array[j] < array[min])
+		min_num = array[i];
+		min_index = i;
+
+		for (j = i + 1; j < size; j++)
 		{
-			flag_chg = 1;
-			min = j;
+			if (min_num > array[j])
+			{
+				min_index = j;
+				min_num = array[j];
+			}
+		}
+		if (min_index != i)
+		{
+			array[min_index] = array[i];
+			array[i] = min_num;
+			print_array(array, size);
 		}
 	}
-
-	tmp = array[i];
-	array[i] = array[min];
-	array[min] = tmp;
-
-	for (k = 0; k < size; k++)
-	{
-		if (array[k] > array[k + 1])
-		flag = 1;
-	}
-		if (flag == 1 && flag_chg == 1)
-		print_array(array, size);
-	}
-	print_array(array, size);
 }
