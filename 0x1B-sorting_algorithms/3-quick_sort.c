@@ -58,7 +58,7 @@ void fast_sort(int *array, size_t size, int lower, int upper)
 	if (lower < upper)
 	{
 		partition = lomuto_partition(array, size, lower, upper);
-		fast_sort(array, size, lowe, partition - 1);
+		fast_sort(array, size, lower, partition - 1);
 		fast_sort(array, size, partition + 1, upper);
 	}
 }
