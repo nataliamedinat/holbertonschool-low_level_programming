@@ -7,26 +7,27 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	int i = list; /* For move*/
-	int idx = list;
-	int tmp;
+	listint_t *current;
 
 	if (list == NULL || *list == NULL)
 		return;
 
+	current = (*list)->next;
+
 	while (list != NULL)
 	{
-		if ( i == idx)
-			j = j->next;
+		while ((current != NULL) && (current->n < current->prev->n))
+		{
+			current->prev->next = current->next;
+			current->next->prev = current->prev;
 
-
-
-
-
-
+			current->prev->next = current->prev;
+			current->next->prev = current->prev;
+			current->prev->next = current;
+			current->next->prev = current;
+			print_list(*list);
+		}
+		current = current->next;
 	}
-
-
-
-
 }
+
